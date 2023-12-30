@@ -21,7 +21,7 @@ const saltRounds = 7;
 exports.register = async (req, res) => {
     try {
         console.log(req);
-        const { name, email, phone_number, password } = req.body;
+        const { name, email, phone_number, password } = req.fields;
         const profile_image = req.file.path;
         const cloudinaryUpload = await cloudinary.uploader.upload(profile_image);
 
