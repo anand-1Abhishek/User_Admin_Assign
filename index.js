@@ -5,6 +5,9 @@ const connectDB = require('./config/db.js');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const formidable = require('express-formidable')
+var multer = require('multer')
+var morgan =require('morgan');
+var upload = multer();
 
 
 const app = express();
@@ -16,6 +19,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use(formidable());
+morgan('tiny')
 
 
 
